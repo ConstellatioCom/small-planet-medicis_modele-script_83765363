@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PER Médicis - Encodage Schema.org (Démo)</title>
+    <!-- Chargement de Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Configuration de la police Inter pour le texte standard et Roboto Mono pour le code */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f9fb; /* Légèrement gris */
+        }
+        .code-container {
+            font-family: 'Roboto Mono', monospace;
+            font-size: 0.85rem;
+            line-height: 1.4;
+        }
+        /* Définition des couleurs personnalisées */
+        .highlight-entity {
+            font-weight: 700;
+            color: #afb738; /* Vert/Olive personnalisé */
+        }
+        .highlight-target {
+            font-weight: 700;
+            color: #99acff; /* Bleu clair personnalisé */
+        }
+    </style>
+</head>
+<body class="p-8 md:p-12">
+
+    <div class="max-w-4xl mx-auto space-y-10">
+
+        <!-- En-tête : Titre corrigé selon les demandes -->
+        <header class="text-center mb-8">
+            <h1 class="text-3xl font-bold text-gray-800">
+                De la phrase au script Schema.org
+            </h1>
+            <p class="text-lg text-gray-600 mt-2">
+                Illustration de l'encodage E-A-T et ROME du produit PER Médicis pour le <span class="font-semibold text-indigo-600">Boucher</span>.
+            </p>
+        </header>
+
+        <!-- Bloc 1: Phrase Canonique de référence -->
+        <div class="bg-white p-6 rounded-xl shadow-lg border border-gray-200">
+            <h2 class="text-xl font-semibold text-gray-800 mb-4 flex items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-6 h-6 text-indigo-500 mr-3">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M11.35 3.826c.078.444.38.831.752 1.069L12 5.03l.4.265c.373.238.675.625.753 1.069l.48 2.766c.026.151.026.307 0 .458l-.48 2.766c-.078.444-.38.831-.752 1.069L12 12.97l-.4-.265c-.373-.238-.675-.625-.753-1.069l-.48-2.766a1.123 1.123 0 0 1 0-.458l.48-2.766Z" />
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M21 21L12 3L3 21Z" />
+                </svg>
+                1. Phrase de référence
+            </h2>
+            <p class="text-gray-700 text-lg italic">
+                <span class="highlight-entity">Le Plan d'Épargne Retraite (PER) Médicis</span> de <span class="highlight-entity">Médicis</span>, mutuelle affiliée à <span class="highlight-entity">Malakoff Humanis</span> et contrôlée par l'<span class="highlight-entity">ACPR</span>, est un PER <span class="highlight-entity">Loi PACTE</span> géré par l'expertise de <span class="highlight-entity">Sienna Investment Managers</span>, et spécifiquement conçu pour <span class="highlight-target">le boucher</span>.
+            </p>
+            <p class="text-sm text-gray-500 mt-3">
+                Chaque élément coloré est encodé dans le script ci-dessous.
+            </p>
+        </div>
+
+        <!-- Bloc 2: Script JSON-LD -->
+        <div class="bg-gray-800 p-6 rounded-xl shadow-2xl">
+            <h2 class="text-xl font-semibold text-white mb-4 flex items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-6 h-6 text-yellow-400 mr-3">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M14.25 9.75 16.5 12l-2.25 2.25m-4.5 0L7.5 12l2.25-2.25M6 4.5h12c.983 0 1.815.394 2.414 1.053a3.176 3.176 0 0 1 .586 1.442v10.5c0 .736-.31 1.428-.85 1.916A2.96 2.96 0 0 1 18 19.5H6c-.736 0-1.428-.31-1.916-.85A2.96 2.96 0 0 1 3 17.5V6.75A2.96 2.96 0 0 1 4.5 5.25c.583-.49 1.275-.815 1.916-.85Z" />
+                </svg>
+                2. Script JSON-LD
+            </h2>
+            <pre class="code-container bg-gray-900 text-green-300 p-4 rounded-lg overflow-x-auto border border-gray-700 shadow-inner">
+&lt;script type="application/ld+json"&gt;
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  
+  // URL de la page (Variable 1 & 6)
+  "@id": "https://www.mutuelle-medicis.com/plan-epargne-retraite-pour-boucher/",
+  
+  "name": "PER Médicis pour boucher", 
+  "description": "Le Plan d'Épargne Retraite (PER) Médicis de Médicis, mutuelle affiliée à Malakoff Humanis et contrôlée par l'ACPR, est un PER Loi PACTE géré par l'expertise de Sienna Investment Managers, et spécifiquement conçu pour le boucher.",
+  
+  // E-A-T : Entités de Confiance (Marque, Contrôle)
+  "brand": {
+    "@type": "Organization",
+    "name": "Médicis",
+    "parentOrganization": { 
+      "@type": "Organization",
+      "name": "Malakoff Humanis",
+      "description": "Mutuelle... soumise au contrôle de l'Autorité de Contrôle Prudentiel et de Résolution (ACPR)."
+    }
+  },
+  
+  // E-A-T : Expertise de Gestion d'Actifs
+  "isRelatedTo": { 
+      "@type": "Organization",
+      "name": "Sienna Investment Managers",
+      "description": "Partenaire de gestion d'actifs..."
+  },
+  
+  // Cible et Identification (Audience Pure)
+  "audience": {
+    "@type": "Audience",
+    "name": "Boucher", 
+    "description": "Professionnel indépendant, chef d'entreprise... de la catégorie Artisanat et métiers de bouche.",
+    
+    // Ajout Code ROME pour l'identification professionnelle
+    "identifier": {
+        "@type": "PropertyValue",
+        "propertyID": "Code ROME", 
+        "value": "D1101",
+        "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/D1101"
+    }
+  },
+  
+  "offers": {
+    "@type": "Offer",
+    "areaServed": "France",
+    "availability": "https://schema.org/InStock",
+    "description": "Plan d'Épargne Retraite (PER) conforme à la Loi PACTE..." 
+  },
+  
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://www.mutuelle-medicis.com/plan-epargne-retraite-pour-boucher/"
+  }
+}
+&lt;/script&gt;
+            </pre>
+            <p class="text-sm text-gray-400 mt-3">
+                Ce script est issu d'un modèle conçu pour générer les 75 versions de script (une par cible).
+            </p>
+        </div>
+
+        <!-- Bloc 3: Validation du script -->
+        <div class="bg-white p-6 rounded-xl shadow-lg border border-gray-200">
+            <h2 class="text-xl font-semibold text-gray-800 mb-4 flex items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-6 h-6 text-red-700 mr-3">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12c0 1.268-.617 2.354-1.5 3.069v.74c0 1.25-.8 2.29-2 2.56-1.1.25-2.26.17-3.41-.01-1.15-.18-2.28-.4-3.41-.65-1.15-.25-2.31-.4-3.41-.65s-2.26-.17-3.41-.01c-1.2.27-2 .99-2 2.56v.74C3.617 14.354 3 13.268 3 12c0-4.97 4.03-9 9-9s9 4.03 9 9Z" />
+                </svg>
+                3. Validation du script
+            </h2>
+            
+            <a href="https://validator.schema.org/" target="_blank" 
+               class="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-full shadow-lg text-white transition duration-300 ease-in-out hover:shadow-xl hover:opacity-90" 
+               style="background-color: #990000;">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-5 h-5 mr-3">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3" />
+                </svg>
+                Tester le script (Validateur schema.org)
+            </a>
+        </div>
+    </div>
+
+</body>
+</html>
